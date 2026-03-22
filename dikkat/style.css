@@ -1,0 +1,111 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111, #222); /* خلفية داكنة جذابة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+/* الصورة / Avatar */
+#avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+}
+#avatar:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 40px #00ffff;
+}
+
+/* الاسم والدور */
+#name {
+  font-size: 48px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+#role {
+  font-size: 24px;
+  color: #ffaa00;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #ffaa00;
+}
+
+/* صندوق التحذير */
+#alertBox {
+  background: rgba(0, 0, 0, 0.8); /* داكن شفاف */
+  border: 2px solid #ffaa00;
+  box-shadow: 0 0 25px rgba(255, 170, 0, 0.7);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 450px;
+  animation: fadeIn 1s ease forwards;
+}
+
+#alertBox h1 {
+  color: #ff3333;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #ff3333, 0 0 20px #ff5555;
+}
+
+#alertBox p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+/* الأزرار */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 8px;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+}
+.btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 50px rgba(0, 255, 255, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(-30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media(max-width: 500px){
+  #name{font-size:36px;}
+  #role{font-size:18px;}
+  #avatar{width:120px;height:120px;}
+  #alertBox{padding:20px;}
+  #alertBox h1{font-size:24px;}
+  #alertBox p{font-size:16px;}
+  .btn{padding:10px 20px;font-size:14px;}
+}
