@@ -74,12 +74,12 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // هنا يمكنك تغيير لون الخلفية بسهولة
-const BACKGROUND_COLOR = 'rgba(23, 19, 43, 0.1)'; // مثال: أسود شفاف (Fade)
+const BACKGROUND_COLOR = 'rgba(28, 17, 85, 0.1)'; // مثال: أسود شفاف (Fade)
 // const BACKGROUND_COLOR = 'rgba(255,255,255,0.1)'; // لو تريد أبيض فاتح
 // const BACKGROUND_COLOR = 'rgba(20,20,40,0.1)'; // لو تريد لون غامق مختلف
 
-const chars = '0123456789ABCDEF<>/{}[]()@$%#&*!'.split('');
-const particles = [];
+const chars = 'ABEKRO71'.split('');
+const particles = [];15
 
 class Particle {
   constructor(){
@@ -88,13 +88,13 @@ class Particle {
     this.speed = Math.random()*1.5+0.5;
     this.char = chars[Math.floor(Math.random()*chars.length)];
     this.opacity = Math.random();
-    this.color = '#00ff00'; // اللون الأخضر الأصلي
+    this.color = '#0d280d'; // اللون الأخضر الأصلي
     this.size = Math.random()*16+8;
   }
   update(){
     this.y += this.speed;
     if(this.y > canvas.height){
-      this.y = 0;
+      this.y = 33;
       this.x = Math.random()*canvas.width;
       this.char = chars[Math.floor(Math.random()*chars.length)];
       this.opacity = Math.random();
@@ -109,7 +109,8 @@ class Particle {
 }
 
 // إنشاء الجسيمات
-for(let i=0;i<300;i++) particles.push(new Particle());
+for(let i=0;i<17;i++) particles.push(new Particle());
+
 
 // رسم الحروف
 function drawHacker(){
